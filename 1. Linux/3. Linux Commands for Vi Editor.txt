@@ -1,0 +1,79 @@
+Linux Commands for Vi Editor:
+
+:q
+Simple exit
+
+:w 
+Save the file but keep it open.
+
+:sh 
+Execute Shell Commands 
+
+:q! 
+Exit without save.
+
+:wq 
+Exit by saving.
+
+shift + ^ 
+Move cursor at start of line.
+
+shift + $
+Move cursor at end of line.
+
+shift + h
+Move cursor at top of screen.
+
+shift + L 
+Move cursor at bottom of screen.
+
+shift + A 
+Insert Text at the end of line.
+
+shift + n 
+Search Next 
+
+shift + s 
+Replace entire line. 
+ 
+gg 
+To go in start of file
+
+dd 
+To delete the entire line
+
+shift + G
+To go in end of file
+
+shift + U
+Undo all last changes in line.
+ 
+CTRL+d 
+Move forward 1/2 screen.
+
+YP 
+Copy the current line and paste (Y for copy P for paste)
+ 
+P
+Move cursor where u want to put the copied text.
+ 
+:s/pattern/replace/
+Syntax for replace old string with new, here word pattern is old string. (Only on the line)
+
+:%s/pattern/replace/
+Replace at every occurrence.
+
+dw 
+Delete word. 
+
+shift + d 
+Delete to end of line. 
+
+dd
+Delete a single line at once.
+
+ndd
+Delete n numbers of line (n must be integer)
+
+/ xyz
+To search xyz in opened file

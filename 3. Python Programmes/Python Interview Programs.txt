@@ -1,0 +1,527 @@
+Python Interview Programs:
+
+1. Write a python program to print the given number is odd or even.
+num = int(input("Enter a number: "))
+if (num % 2) == 0:
+   print("{0} is Even".format(num))
+else:
+   print("{0} is Odd".format(num))
+
+Output:
+Enter a number: 43
+43 is Odd
+Enter a number: 58
+58 is Even
+
+2. Write a python program to find the given number is positive or negative.
+num = float(input("Enter a number: "))
+if num > 0:
+   print("Positive number")
+elif num == 0:
+   print("Zero")
+else:
+   print("Negative number")
+
+Output:
+Enter a number: -11
+Negative number
+Enter a number: 99
+Positive number
+Enter a number: 0
+Zero
+
+3. Write a python program to find the sum of two numbers.
+num1 = int(input("Enter Number1: "))
+num2 = int(input("Enter Number2: "))
+print("sum of given numbers is:", num1 + num2)
+
+Output:
+Enter Number1: 21
+Enter Number2: 34
+sum of given numbers is: 55
+
+4. Write a python program to find if the given number is prime or not.
+num = int(input("enter a number: "))
+flag = False
+if num > 1:
+    for i in range(2, num):
+        if (num % i) == 0:
+            flag = True
+            break
+
+if flag:
+    print(num, "is not a prime number")
+else:
+    print(num, "is a prime number")
+
+Output:
+enter a number: 45
+45 is not a prime number
+enter a number: 97
+97 is a prime number
+
+5. Write a python program to to check if the given number is palindrome or not.
+num = int(input("Enter a number: "))
+temp = num
+reverse = 0
+while temp > 0:
+    remainder = temp % 10
+    reverse = (reverse * 10) + remainder
+    temp = temp // 10
+if num == reverse:
+  print('Palindrome')
+else:
+  print("Not Palindrome")
+
+Output:
+Enter a number: 12321
+Palindrome
+Enter a number: 65784
+Not Palindrome
+
+6. Write a python program to to check if the given number is armstrong or not.
+num = int(input("Enter a number: "))
+sum = 0
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+
+Output:
+Enter a number: 407
+407 is an Armstrong number
+Enter a number: 500
+500 is not an Armstrong number
+
+7. Write a python program to to check if the given strings are anagram or not.
+def check(s1, s2):
+    
+    if(sorted(s1)== sorted(s2)):
+        print("The strings are anagrams.")
+    else:
+        print("The strings aren't anagrams.")        
+        
+s1 = input("Enter string1: ")
+s2 = input("Enter string2: ")
+check(s1, s2)
+
+Output:
+Enter string1: listen
+Enter string2: silent
+The strings are anagrams.
+Enter string1: sahana
+Enter string2: nayana
+The strings aren't anagrams.
+Enter string1: gram
+Enter string2: arm
+The strings aren't anagrams.
+
+8. Write a python program to find a maximum of two numbers.
+def maximum(a, b):
+    
+    if a >= b:
+        return a
+    else:
+        return b
+    
+a = int(input("Enter a number: "))
+b = int(input("Enter a number: "))
+print(maximum(a, b))
+
+Output:
+Enter a number: 56
+Enter a number: 87
+87
+Enter a number: 78
+Enter a number: 498
+498
+
+9. Write a python program to find a minimum of two numbers.
+def minimum(a, b):   
+    if a <= b:
+        return a
+    else:
+        return b
+    
+a = int(input("Enter a number: "))
+b = int(input("Enter a number: "))
+print(minimum(a, b))
+
+Output:
+Enter a number: 5
+Enter a number: 9
+5
+Enter a number: 1234
+Enter a number: 7865
+1234
+
+
+10. Write a python program to find a maximum of three numbers.
+def maximum(a, b, c):
+
+    if (a >= b) and (a >= c):
+        largest = a
+
+    elif (b >= a) and (b >= c):
+        largest = b
+    else:
+        largest = c
+        
+    return largest
+
+
+a = int(input("Enter a number: "))
+b = int(input("Enter a number: "))
+c = int(input("Enter a number: "))
+print(maximum(a, b, c))
+
+Output:
+Enter a number: 56
+Enter a number: 97
+Enter a number: 07
+97
+
+11. Write a python program to find a minimum of three numbers.
+a = int(input('Enter first number  : '))
+b = int(input('Enter second number : '))
+c = int(input('Enter third number  : '))
+smallest = 0
+if a < b and a < c :
+    smallest = a
+if b < a and b < c :
+    smallest = b
+if c < a and c < b :
+    smallest = c
+print(smallest, "is the smallest of three numbers.")
+
+Output:
+Enter first number  : 56
+Enter second number : 87
+Enter third number  : 67
+56 is the smallest of three numbers.
+
+12. Write a python program to find a factorial of a number.
+num = int(input("Enter a number: "))
+factorial = 1
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial)
+
+Output:
+Enter a number: 10
+The factorial of 10 is 3628800
+Enter a number: -7
+Sorry, factorial does not exist for negative numbers
+Enter a number: 0
+The factorial of 0 is 1
+
+13. Write a python program to find a fibonacci of a number.
+nterms = int(input("How many terms? "))
+n1, n2 = 0, 1
+count = 0
+
+if nterms <= 0:
+   print("Please enter a positive integer")
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       n1 = n2
+       n2 = nth
+       count += 1
+
+Output:
+How many terms?
+10
+Fibonacci sequence:
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+14. Write a python program to find a GCD of two numbers.
+def gcd(a, b):
+
+    if (a == 0):
+        return b
+    if (b == 0):
+        return a
+
+    if (a == b):
+        return a
+
+    if (a > b):
+        return gcd(a-b, b)
+    return gcd(a, b-a)
+
+a = int(input('Enter the value of a : '))
+b = int(input('Enter the value of b : '))
+if(gcd(a, b)):
+    print('GCD of', a, 'and', b, 'is', gcd(a, b))
+else:
+    print('not found')
+
+Output:
+Enter the value of a : 98
+Enter the value of b : 56
+GCD of 98 and 56 is 14
+Enter the value of a  : 34
+Enter the value of b : 87
+GCD of 34 and 87 is 1
+
+15. Write a python program to print the following pattern.
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
+def myfunc(n):
+    for i in range(0, n):
+        for j in range(0, i+1):
+            print("* ",end="")
+        print("\r")
+
+n = 5
+myfunc(n)
+
+Output:
+*
+* *
+* * *
+* * * *
+* * * * *
+
+16. Write a python program to print the following pattern.
+            *
+           * *
+          * * *
+         * * * *
+        * * * * *
+def myfunc(n):
+    k = n - 1
+    for i in range(0, n):
+        for j in range(0, k):
+            print(end=" ")
+        k = k - 1
+        for j in range(0, i+1):
+            print("* ", end="")
+        print("\r")
+n = 5
+myfunc(n)
+
+Output:
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+
+17. Write a python program to print the following pattern.
+    1
+    1 2
+    1 2 3
+    1 2 3 4
+    1 2 3 4 5
+def num(n):
+    num = 1
+    for i in range(0, n):
+        num = 1
+        for j in range(0, i+1):
+            print(num, end=" ")
+            num = num + 1
+        print("\r")
+n = 5
+num(n)
+
+Output:
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+18. Write a python program to print the following pattern.
+    1
+    2  3
+    4  5  6
+    7  8  9  10
+    11 12 13 14 15
+def num(n):
+    num = 1
+    for i in range(0, n):
+        for j in range(0, i+1):
+            print(num, end=" ")
+            num = num + 1
+        print("\r")
+
+n = 5
+num(n)
+
+Output:
+1
+2  3
+4  5  6
+7  8  9  10
+11 12 13 14 15
+
+19. Write a python program to print the following pattern.
+    A
+    B B
+    C C C
+    D D D D
+    E E E E E
+def alphapat(n):
+    num = 65
+    for i in range(0, n):
+        for j in range(0, i+1):
+            ch = chr(num)
+            print(ch, end=" ")
+        num = num + 1
+    
+        print("\r")
+n = 5
+alphapat(n)
+
+Output:
+A
+B B
+C C C
+D D D D
+E E E E E
+
+20. Write a python program to print the following pattern.
+    A
+    B C
+    D E F
+    G H I J
+    K l M N O
+def contalpha(n):
+    num = 65
+    for i in range(0, n):
+        for j in range(0, i+1):
+            ch = chr(num)
+            print(ch, end=" ")
+            num = num + 1
+        print()
+n = 5
+contalpha(n)
+
+Output:
+A
+B C
+D E F
+G H I J
+K l M N O
+
+21. Write a python program to check if a given string is palindrome.
+def is_palindrome(string):
+    reversed_string = string[::-1]
+    return string == reversed_string
+
+word =input('Enter the word : ')
+if is_palindrome(word):
+    print(f"{word} is a palindrome")
+else:
+    print(f"{word} is not a palindrome")
+
+Output:
+Enter the word : madam
+madam is a palindrome
+Enter the word : sahana
+sahana is not a palindrome
+
+22. Write a python program to find the largest element in a list.
+def find_largest(numbers):
+    largest = numbers[0]
+    for num in numbers:
+        if num > largest:
+            largest = num
+    return largest
+
+nums = [10, 5, 8, 20, 3]
+largest_num = find_largest(nums)
+print(f"The largest number is {largest_num}")
+
+Output:
+The largest number is 20
+
+23. Write a python program to reverse a string.
+def reverse_string(string):
+    return string[::-1]
+
+text = "Hello, World!"
+reversed_text = reverse_string(text)
+print(reversed_text)
+
+Output:
+Enter the text : Sahana Nayana Megha Sinchu
+uhcniS ahgeM anayaN anahaS 
+
+24. Write a python program to count the frequency of each element in a list.
+def count_frequency(numbers):
+    frequency = {}
+    for num in numbers:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    return frequency
+
+nums = [1, 2, 3, 2, 1, 3, 2, 4, 5, 4]
+frequency_count = count_frequency(nums)
+print(frequency_count)
+
+Output:
+{1: 2, 2: 3, 3: 2, 4: 2, 5: 1}
+
+25. write a python program to find the common elements between two lists.
+def find_common_elements(list1, list2):
+    common_elements = []
+    for item in list1:
+        if item in list2:
+            common_elements.append(item)
+    return common_elements
+
+list_a = [1, 2, 3, 4, 5]
+list_b = [4, 5, 6, 7, 8]
+common = find_common_elements(list_a, list_b)
+print(common)
+
+Output:
+[4, 5]
+
+26. Write a python program to sort a list of elements using the Bubble Sort Algorithm. 
+def bubble_sort(elements):
+    n = len(elements)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if elements[j] > elements[j + 1]:
+                elements[j], elements[j + 1] = elements[j + 1], elements[j]
+
+nums = [5, 2, 8, 1, 9]
+bubble_sort(nums)
+print(nums)
+
+Output:
+[1, 2, 5, 8, 9]
+
